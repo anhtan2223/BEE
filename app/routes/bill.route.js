@@ -5,8 +5,11 @@ router.route("/")
     .post(controller.createBill);
 
 router.route("/:id")
-    .delete(controller.deleteBill)
+    .get(controller.findBillbyId)
     .put(controller.updateBill)
-    .get(controller.findBillbyId);
+    .delete(controller.cancelBill)
+
+router.route("/status/:id")
+    .get(controller.nextStatus)
     
 module.exports = router;

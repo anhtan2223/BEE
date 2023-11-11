@@ -5,8 +5,11 @@ router.route("/")
     .post(controller.createAccount);
 
 router.route("/:id")
+  .get(controller.findAccountbyId)
   .delete(controller.deleteAccount)
   .put(controller.updateAccount)
-  .get(controller.findAccountbyId);
+
+router.route("/login")
+  .post(controller.login)
 
 module.exports = router;
