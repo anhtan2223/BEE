@@ -20,7 +20,7 @@ async function InitServer()
 {
     try {
         await Mongo.connect(config.db.url)
-        console.log("Connect To MongoDB Success");
+        console.log("Init Data MongoServer Success");
         const collection = new Service()
         
         await collection.role.deleteMany({})
@@ -47,5 +47,5 @@ async function InitServer()
     }
 }
 
-// InitServer()
+InitServer()
 startServer()

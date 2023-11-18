@@ -5,6 +5,7 @@ const Product = require('./app/routes/product.route')
 const Bill = require('./app/routes/bill.route')
 const BillDetail = require('./app/routes/billdetail.route')
 const cartRouter = require('./app/routes/cart.route')
+const type = require('./app/routes/type.route')
 const ErrorAPI =  require('./app/ErrorAPI')
 
 const app = express()
@@ -17,6 +18,7 @@ app.use('/api/bill', Bill)
 app.use('/api/detail', BillDetail)
 app.use('/api/product', Product)
 app.use('/api/cart', cartRouter)
+app.use('/api/type', type)
 
 
 //Catch Not Found

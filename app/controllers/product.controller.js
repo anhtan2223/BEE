@@ -77,9 +77,11 @@ exports.findProductByName = async (req, res, next) => {
   try {
     const Service = new MongoService()
     const sanpham = Service.sanpham
-    const result = await sanpham.find({productName : {$regex : new RegExp(req.body.productName) , $options : "i"}}).toArray()
-        if(result.length === 0) 
-            return res.json({message :`Không Tìm Thấy Sản Phẩm có Tên ${req.body.productName}`})
+    var result
+    if(req.body.type)
+      result = await sanpham.find({productName : {$regex : new RegExp(req.body.productName) , $options : "i"} , type : req.body.type*1}).toArray()
+    else 
+      result = await sanpham.find({productName : {$regex : new RegExp(req.body.productName) , $options : "i"} }).toArray()      
     res.json(result)
 } catch (error) {
     console.log(error)

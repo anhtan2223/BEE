@@ -224,6 +224,177 @@ const sanphamInput =
         "quantity"      : 500 ,
         "PrdImage"      : "image/shoes.png"
     },
+    {
+        "_id"           : 10 ,
+        "productName"   : "Giầy Đỏ Đen",
+        "type"          : 1 ,   
+        "description"   : "Đôi Giầy Màu Sang Trọng",
+        "price"         : 650000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/giay9.jpg"
+    },
+    {
+        "_id"           : 11 ,
+        "productName"   : "Giầy Xám",
+        "type"          : 1 ,   
+        "description"   : "Đôi Giầy Màu Sang Trọng",
+        "price"         : 285000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/giay10.jpg"
+    },
+    {
+        "_id"           : 12 ,
+        "productName"   : "Giầy Xanh Đen",
+        "type"          : 1 ,   
+        "description"   : "Đôi Giầy Màu Sang Trọng",
+        "price"         : 345000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/giay11.jpg"
+    },
+    {
+        "_id"           : 13 ,
+        "productName"   : "Giầy Cổ Cao",
+        "type"          : 1 ,   
+        "description"   : "Đôi Giầy Màu Sang Trọng",
+        "price"         : 950000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/giay12.jpg"
+    },
+    {
+        "_id"           : 14 ,
+        "productName"   : "Áo Đen",
+        "type"          : 2 ,   
+        "description"   : "Chiếc Áo Màu Sang Trọng",
+        "price"         : 120000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/ao1.jpg"
+    },
+    {
+        "_id"           : 15 ,
+        "productName"   : "Áo Xanh",
+        "type"          : 2 ,   
+        "description"   : "Chiếc Áo Màu Sang Trọng",
+        "price"         : 240000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/ao2.jpg"
+    },
+    {
+        "_id"           : 16 ,
+        "productName"   : "Áo Đỏ",
+        "type"          : 2 ,   
+        "description"   : "Chiếc Áo Màu Sang Trọng",
+        "price"         : 888000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/ao3.jpg"
+    },
+    {
+        "_id"           : 17 ,
+        "productName"   : "Quần Đen Dài",
+        "type"          : 3 ,   
+        "description"   : "Chiếc Quần Màu Sang Trọng",
+        "price"         : 545000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/quan1.jpg"
+    },
+    {
+        "_id"           : 18 ,
+        "productName"   : "Quần Xám Dài",
+        "type"          : 3 ,   
+        "description"   : "Chiếc Quần Màu Sang Trọng",
+        "price"         : 240000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/quan2.jpg"
+    },
+    {
+        "_id"           : 19 ,
+        "productName"   : "Combo 3 Tất",
+        "type"          : 4 ,   
+        "description"   : "Chiếc Tất Màu Sang Trọng",
+        "price"         : 55000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/vo1.jpg"
+    },
+    {
+        "_id"           : 20 ,
+        "productName"   : "Đồng Hồ Đen",
+        "type"          : 5 ,   
+        "description"   : "Đồng Hồ Màu Sang Trọng",
+        "price"         : 25000000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/dongho1.jpg"
+    },
+    {
+        "_id"           : 21 ,
+        "productName"   : "Đồng Hồ Vàng",
+        "type"          : 5 ,   
+        "description"   : "Đồng Hồ Màu Sang Trọng",
+        "price"         : 900000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/dongho2.jpg"
+    },
+    {
+        "_id"           : 22 ,
+        "productName"   : "Cà Chua",
+        "type"          : 6 ,   
+        "description"   : "Trái Cây Tươi",
+        "price"         : 15000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/traicay1.png"
+    },
+    {
+        "_id"           : 23 ,
+        "productName"   : "Táo Đỏ",
+        "type"          : 6 ,   
+        "description"   : "Trái Cây Tươi",
+        "price"         : 35000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/traicay2.png"
+    },
+    {
+        "_id"           : 24 ,
+        "productName"   : "Chuối Vàng",
+        "type"          : 6 ,   
+        "description"   : "Trái Cây Tươi",
+        "price"         : 40000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/traicay3.png"
+    },
+    {
+        "_id"           : 25 ,
+        "productName"   : "Bắp Cải Xanh",
+        "type"          : 6 ,   
+        "description"   : "Trái Cây Tươi",
+        "price"         : 10000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/traicay4.jpg"
+    },
+    {
+        "_id"           : 26 ,
+        "productName"   : "Đồng Hồ Vàng",
+        "type"          : 5 ,   
+        "description"   : "Đồng Hồ Màu Sang Trọng",
+        "price"         : 799000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/dongho3.jpg"
+    },
+    {
+        "_id"           : 27 ,
+        "productName"   : "Quần Perry",
+        "type"          : 3 ,   
+        "description"   : "Chiếc Quần Màu Sang Trọng",
+        "price"         : 40000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/quan3.png"
+    },
+    {
+        "_id"           : 28 ,
+        "productName"   : "Áo Perry",
+        "type"          : 2 ,   
+        "description"   : "Chiếc Áo Màu Sang Trọng",
+        "price"         : 80000,
+        "quantity"      : 500 ,
+        "PrdImage"      : "image/ao4.png"
+    },
 ]
 const TypeProductInput = 
 [
@@ -233,12 +404,24 @@ const TypeProductInput =
     },
     {
         "_id" : 2 ,
-        "Name" : "Trái Cây" 
+        "Name" : "Áo" 
     },
     {
         "_id" : 3 ,
-        "Name" : "Something" 
-    }
+        "Name" : "Quần" 
+    },
+    {
+        "_id" : 4 ,
+        "Name" : "Vớ" 
+    },
+    {
+        "_id" : 5 ,
+        "Name" : "Đồng Hồ" 
+    },
+    {
+        "_id" : 6 ,
+        "Name" : "Hoa Quả" 
+    },
 ]
 const hoadonInput = 
 [
