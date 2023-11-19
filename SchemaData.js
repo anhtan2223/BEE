@@ -454,8 +454,46 @@ const giohangInput =
     {
         "_id"       : 1 ,
         "UID"       : 3 ,
-        "prdId"     :[1,1] ,
-        "quantity"  :[1,3] ,
+        "prdId"     :
+        [
+            {
+                "_id"           : 19 ,
+                "productName"   : "Combo 3 Tất",
+                "type"          : 4 ,   
+                "description"   : "Chiếc Tất Màu Sang Trọng",
+                "price"         : 55000,
+                "quantity"      : 500 ,
+                "PrdImage"      : "image/vo1.jpg"
+            },
+            {
+                "_id"           : 27 ,
+                "productName"   : "Quần Perry",
+                "type"          : 3 ,   
+                "description"   : "Chiếc Quần Màu Sang Trọng",
+                "price"         : 40000,
+                "quantity"      : 500 ,
+                "PrdImage"      : "image/quan3.png"
+            },
+            {
+                "_id"           : 28 ,
+                "productName"   : "Áo Perry",
+                "type"          : 2 ,   
+                "description"   : "Chiếc Áo Màu Sang Trọng",
+                "price"         : 80000,
+                "quantity"      : 500 ,
+                "PrdImage"      : "image/ao4.png"
+            },
+            {
+                "_id": 20,
+                "productName": "Đồng Hồ Đen",
+                "type": 5,
+                "description": "Đồng Hồ Màu Sang Trọng",
+                "price": 25000000,
+                "quantity": 500,
+                "PrdImage": "image/dongho1.jpg"
+              }
+        ] ,
+        "quantity"  : [3,4,5,1] ,   
     }
 ]
 //Next Number
