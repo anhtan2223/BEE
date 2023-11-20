@@ -14,6 +14,7 @@ exports.createProduct = async (req, res, next) => {
     return res.json({message : "Thêm Mới Sản Phẩm Thất Bại"})
   
   } catch (error) {
+    console.log(error)
     return next(new ErrorAPI(500,"Error When Create sanpham"))
   }
 };
@@ -79,9 +80,9 @@ exports.findProductByName = async (req, res, next) => {
     const sanpham = Service.sanpham
     var result
     if(req.body.type)
-      result = await sanpham.find({productName : {$regex : new RegExp(req.body.productName) , $options : "i"} , type : req.body.type*1}).toArray()
+      result = await sanpham.find({productName : {$regex : new RegExp(req.body.productName) , $options : "i"} , type : req.body.type*1}).sort({_id : -1}).toArray()
     else 
-      result = await sanpham.find({productName : {$regex : new RegExp(req.body.productName) , $options : "i"} }).toArray()      
+      result = await sanpham.find({productName : {$regex : new RegExp(req.body.productName) , $options : "i"} }).sort({_id : -1}).toArray()
     res.json(result)
 } catch (error) {
     console.log(error)

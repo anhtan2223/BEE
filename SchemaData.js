@@ -502,7 +502,7 @@ const BangTruyVan =
     {
         "_id"           : 0 ,
         "account"       : 8 ,
-        "sanpham"       : 2 ,
+        "sanpham"       : 29 ,
         "hoadon"        : 1 ,
         "chitiet"       : 2 ,
         "giohang"       : 2 ,

@@ -32,7 +32,7 @@ exports.addItem = async (req,res,next) => {
   try {
     const Service = new MongoService()
     const giohang = Service.giohang
-    const UID = req.params.uid
+
     // console.log(UID)
     const product = req.body
     // console.log(product._id)
