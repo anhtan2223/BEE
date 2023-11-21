@@ -80,6 +80,35 @@ exports.nextStatus = async (req, res, next) => {
   }
 };
 
+exports.validBill = async (req,res,next) => {
+  try {
+    const service = new MongoService()
+    const hoadon = service.hoadon
+    const result = await hoadon.findOneAndUpdate({"_id" : req.params.id*1} , {$set : {"status" : 2 , "SID" : req.body.SID}})
+    
+    res.json(result)
+
+  } catch (error) {
+    return next(new ErrorAPI(500,"Error When Update Hoa Don"))
+  }
+}
+
+exports.doneBill = async (req,res,next) => {
+  try {
+    const service = new MongoService()
+    const hoadon = service.hoadon
+    // console.log(req.body);
+
+    const result = await hoadon.findOneAndUpdate({"_id" : req.params.id*1} , {$set : {"status" : 4 , "deliveryDate" : req.body.deliveryDate}})
+    
+    res.json(result)
+
+  } catch (error) {
+    return next(new ErrorAPI(500,"Error When Update Hoa Don"))
+  }
+}
+
+
 exports.getBillByUID = async (req, res, next) => {
   try {
     const Service = new MongoService()
@@ -95,7 +124,7 @@ exports.getAvailableBillByUID = async (req, res, next) => {
     const Service = new MongoService()
     const hoadon = Service.hoadon
     // const result  = await hoadon.find({"UID" : req.params.uid*1 , {$and : [{$ne : 0 } , {$ne : 5}]} }).sort({"_id" : -1}).toArray()
-    const result  = await hoadon.find({ $and : [{'status':{$ne : 0 }} , {'status':{$ne : 5 }} , {"UID" : req.params.uid*1} ]}).sort({"_id" : -1}).toArray()
+    const result  = await hoadon.find({ $and : [{'status':{$ne : 0 }} , {'status':{$ne : 4 }} , {"UID" : req.params.uid*1} ]}).sort({"_id" : -1}).toArray()
     return res.json(result) 
   } catch (error) {
     return next(new ErrorAPI(500 , "Get Error When Get HoaDon By UID"))
@@ -106,7 +135,20 @@ exports.getBillBySID = async (req, res, next) => {
   try {
     const Service = new MongoService()
     const hoadon = Service.hoadon
-    const result  = await hoadon.find({"SID" : req.params.sid*1}).toArray()
+    // const result  = await hoadon.find({"SID" : req.params.sid*1} , {"status" : }).toArray()
+    const result  = await hoadon.find({ $and : [{'status':{$lt : 4 }} , {"SID" : req.params.sid*1}]}).toArray()
+    return res.json(result) 
+  } catch (error) {
+    return next(new ErrorAPI(500 , "Get Error When Get HoaDon By SID"))
+  }
+};
+
+exports.getAllBillBySID = async (req, res, next) => {
+  try {
+    const Service = new MongoService()
+    const hoadon = Service.hoadon
+    const result  = await hoadon.find({"SID" : req.params.sid*1}).sort({"_id" : -1}).toArray()
+    // const result  = await hoadon.find({ $and : [{'status':{$ne : 0 }} , {'status':{$ne : 4 }} , {"SID" : req.params.sid*1}]}).toArray()
     return res.json(result) 
   } catch (error) {
     return next(new ErrorAPI(500 , "Get Error When Get HoaDon By SID"))
