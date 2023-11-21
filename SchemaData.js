@@ -427,11 +427,21 @@ const hoadonInput =
 [
     {
         "_id"               : 1 ,
-        "createDate"        : "2020-10-10",
-        "deliveryDate"      : "2023-15-11",
+        "createDate"        : "2023-10-10",
+        "deliveryDate"      : -1,
         "status"            : 1,
-        "UID"               : 1,
-        "SID"               : 2
+        "UID"               : 3,
+        "SID"               : -1 ,
+        "value"             : 40000 ,
+    },
+    {
+        "_id"               : 2 ,
+        "createDate"        : "2023-11-21" ,
+        "deliveryDate"      : -1,
+        "status"            : 1,
+        "UID"               : 3,
+        "SID"               : -1 ,
+        "value"             : 25725000 ,
     }
 ]
 //  Các Trạng Thái Ứng với Các Số 
@@ -443,10 +453,67 @@ const hoadonInput =
 const chitietInput = 
 [
     {
-        "_id"           : 1,
-        "billNumber"    : 1,
-        "prdId"         : [1 , 2 ],
-        "quantity"      : [1 , 3 ],
+        "_id"       : 1,
+        "billNumber": 1,
+        "prdId": 
+        [
+              {
+                "_id": 27,
+                "productName": "Quần Perry",
+                "type": 3,
+                "description": "Chiếc Quần Màu Sang Trọng",
+                "price": 40000,
+                "PrdImage": "image/quan3.png"
+              }
+        ],
+        "quantity":
+        [
+            1
+        ]
+    } ,
+    {
+        "_id" : 2 ,
+        "billNumber": 2,
+        "prdId": [
+        {
+            "_id": 19,
+            "productName": "Combo 3 Tất",
+            "type": 4,
+            "description": "Chiếc Tất Màu Sang Trọng",
+            "price": 55000,
+            "PrdImage": "image/vo1.jpg"
+        },
+        {
+            "_id": 27,
+            "productName": "Quần Perry",
+            "type": 3,
+            "description": "Chiếc Quần Màu Sang Trọng",
+            "price": 40000,
+            "PrdImage": "image/quan3.png"
+        },
+        {
+            "_id": 28,
+            "productName": "Áo Perry",
+            "type": 2,
+            "description": "Chiếc Áo Màu Sang Trọng",
+            "price": 80000,
+            "PrdImage": "image/ao4.png"
+        },
+        {
+            "_id": 20,
+            "productName": "Đồng Hồ Đen",
+            "type": 5,
+            "description": "Đồng Hồ Màu Sang Trọng",
+            "price": 25000000,
+            "PrdImage": "image/dongho1.jpg"
+        }
+        ],
+        "quantity": [
+        3,
+        4,
+        5,
+        1
+        ]
     }
 ]
 const giohangInput = 
@@ -462,7 +529,6 @@ const giohangInput =
                 "type"          : 4 ,   
                 "description"   : "Chiếc Tất Màu Sang Trọng",
                 "price"         : 55000,
-                "quantity"      : 500 ,
                 "PrdImage"      : "image/vo1.jpg"
             },
             {
@@ -471,7 +537,6 @@ const giohangInput =
                 "type"          : 3 ,   
                 "description"   : "Chiếc Quần Màu Sang Trọng",
                 "price"         : 40000,
-                "quantity"      : 500 ,
                 "PrdImage"      : "image/quan3.png"
             },
             {
@@ -480,7 +545,6 @@ const giohangInput =
                 "type"          : 2 ,   
                 "description"   : "Chiếc Áo Màu Sang Trọng",
                 "price"         : 80000,
-                "quantity"      : 500 ,
                 "PrdImage"      : "image/ao4.png"
             },
             {
@@ -489,12 +553,29 @@ const giohangInput =
                 "type": 5,
                 "description": "Đồng Hồ Màu Sang Trọng",
                 "price": 25000000,
-                "quantity": 500,
                 "PrdImage": "image/dongho1.jpg"
               }
         ] ,
         "quantity"  : [3,4,5,1] ,   
-    }
+    },
+    {
+        "_id"       : 2 ,
+        "UID"       : 4 ,
+        "prdId"     : [] ,
+        "quantity"  : [] ,   
+    },
+    {
+        "_id"       : 3 ,
+        "UID"       : 5 ,
+        "prdId"     : [] ,
+        "quantity"  : [] ,   
+    },
+    {
+        "_id"       : 4 ,
+        "UID"       : 6 ,
+        "prdId"     : [] ,
+        "quantity"  : [] ,   
+    },
 ]
 //Next Number
 const BangTruyVan = 
@@ -503,8 +584,8 @@ const BangTruyVan =
         "_id"           : 0 ,
         "account"       : 8 ,
         "sanpham"       : 29 ,
-        "hoadon"        : 1 ,
-        "chitiet"       : 2 ,
+        "hoadon"        : 3 ,
+        "chitiet"       : 3 ,
         "giohang"       : 2 ,
     }
 ]

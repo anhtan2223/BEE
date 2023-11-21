@@ -35,6 +35,7 @@ exports.addItem = async (req,res,next) => {
 
     // console.log(UID)
     const product = req.body
+    delete product.quantity
     // console.log(product._id)
     const cart  = await giohang.findOne({"UID" : req.params.uid*1})
     const index = cart.prdId.findIndex( (value) => value._id == product._id )

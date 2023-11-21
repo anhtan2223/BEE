@@ -7,10 +7,10 @@ exports.createBill = async (req, res, next) => {
     const hoadon = Service.hoadon
     const chitiet = Service.chitiet
     const truyvan = Service.truyvan
-    const detail  = req.params.detail || {prdID : [] , quantity : []}
+    const detail  = req.body.detail || {prdID : [] , quantity : []}
     const index   = await truyvan.findOneAndUpdate({} , {$inc : {hoadon : 1 , chitiet : 1}})
     // console.log(index.hoadon)
-    const result  = await hoadon.insertOne({"_id" : index.hoadon , ...req.body})
+    const result  = await hoadon.insertOne({"_id" : index.hoadon , ...req.body.info})
     await chitiet.insertOne({"_id" : index.chitiet , "billNumber" : index.hoadon , ...detail})
     if(result.acknowledged)
       return res.json({message : "Thêm Mới Hoá Đơn Thành Công"})
@@ -77,5 +77,49 @@ exports.nextStatus = async (req, res, next) => {
   
   } catch (error) {
     return next(new ErrorAPI(500,"Error When Update Hoa Don"))
+  }
+};
+
+exports.getBillByUID = async (req, res, next) => {
+  try {
+    const Service = new MongoService()
+    const hoadon = Service.hoadon
+    const result  = await hoadon.find({"UID" : req.params.uid*1}).sort({"_id" : -1}).toArray()
+    return res.json(result) 
+  } catch (error) {
+    return next(new ErrorAPI(500 , "Get Error When Get HoaDon By UID"))
+  }
+};
+exports.getAvailableBillByUID = async (req, res, next) => {
+  try {
+    const Service = new MongoService()
+    const hoadon = Service.hoadon
+    // const result  = await hoadon.find({"UID" : req.params.uid*1 , {$and : [{$ne : 0 } , {$ne : 5}]} }).sort({"_id" : -1}).toArray()
+    const result  = await hoadon.find({ $and : [{'status':{$ne : 0 }} , {'status':{$ne : 5 }} , {"UID" : req.params.uid*1} ]}).sort({"_id" : -1}).toArray()
+    return res.json(result) 
+  } catch (error) {
+    return next(new ErrorAPI(500 , "Get Error When Get HoaDon By UID"))
+  }
+};
+
+exports.getBillBySID = async (req, res, next) => {
+  try {
+    const Service = new MongoService()
+    const hoadon = Service.hoadon
+    const result  = await hoadon.find({"SID" : req.params.sid*1}).toArray()
+    return res.json(result) 
+  } catch (error) {
+    return next(new ErrorAPI(500 , "Get Error When Get HoaDon By SID"))
+  }
+};
+
+exports.getNewBill = async (req, res, next) => {
+  try {
+    const Service = new MongoService()
+    const hoadon = Service.hoadon
+    const result  = await hoadon.find({"status" : 1}).toArray()
+    return res.json(result) 
+  } catch (error) {
+    return next(new ErrorAPI(500 , "Get Error When Get New HoaDon"))
   }
 };

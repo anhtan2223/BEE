@@ -2,7 +2,8 @@ const router = require("express").Router();
 const controller = require("../controllers/bill.controller");
 
 router.route("/")
-    .post(controller.createBill);
+    .get(controller.getNewBill)
+    .post(controller.createBill)
 
 router.route("/:id")
     .get(controller.findBillbyId)
@@ -12,4 +13,13 @@ router.route("/:id")
 router.route("/status/:id")
     .get(controller.nextStatus)
     
-module.exports = router;
+router.route("/uid/:uid")
+    .get(controller.getBillByUID)
+
+router.route("/uid/available/:uid")
+    .get(controller.getAvailableBillByUID)
+
+router.route("/sid/:sid")
+    .get(controller.getBillBySID)
+
+    module.exports = router;
